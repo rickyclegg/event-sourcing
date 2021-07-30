@@ -1,0 +1,80 @@
+// Get all people
+GET http://localhost:3000/api/people
+Accept: application/json
+
+<> 2021-07-30T100051.200.json
+<> 2021-07-30T095308.200.json
+<> 2021-07-29T200702.200.json
+<> 2021-07-29T200042.200.json
+<> 2021-07-29T195817.200.json
+<> 2021-07-29T195555.200.json
+<> 2021-07-29T195547.200.json
+
+###
+
+// Create Rick
+POST http://localhost:3000/api/people
+Content-Type: application/json
+
+{
+  "person": {
+    "firstname": "Rick",
+    "lastname": "Clegg",
+    "age": 36
+  }
+}
+
+<> 2021-07-30T100253.201.json
+<> 2021-07-30T100130.201.json
+
+###
+
+// Create Charlotte
+POST http://localhost:3000/api/people
+Content-Type: application/json
+
+{
+  "person": {
+    "firstname": "Charlotte",
+    "lastname": "Clegg",
+    "age": 33
+  }
+}
+
+<> 2021-07-29T195751.500.html
+<> 2021-07-29T195541.201.json
+
+###
+
+// Get Rick
+GET http://localhost:3000/api/people/rickclegg
+Accept: application/json
+
+<> 2021-07-30T100336.200.json
+<> 2021-07-30T100305.200.json
+
+###
+
+// Get Charlotte
+GET http://localhost:3000/api/people/rickclegg
+Accept: application/json
+
+###
+
+// Marry Rick to Charlotte
+PUT http://localhost:3000/api/people/rickclegg/marry
+Content-Type: application/json
+Accept: application/json
+
+{ "spouse": "charlotteclegg" }
+
+<> 2021-07-30T100248.404.html
+<> 2021-07-30T100200.404.html
+<> 2021-07-30T100137.404.html
+
+###
+
+// Have a birthday Rick
+PUT http://localhost:3000/api/people/rickclegg/birthday
+Content-Type: application/json
+Accept: application/json
